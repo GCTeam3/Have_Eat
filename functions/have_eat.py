@@ -21,11 +21,11 @@ def food_choice(food_list, weight):
 def get_result(weights, needed_cals):
     foods = pd.read_csv('./food_units.csv')
     food_list = []
-    food_types = list(foods['종류'].unique())
+    food_types = list(foods['식품군'].unique())
 
     for f in food_types:
-        food_list.append([foods[foods['종류']==f].iloc[:, 1].tolist(),
-                          foods[foods['종류']==f].iloc[:, 2].tolist()])
+        food_list.append([foods[foods['식품군']==f].iloc[:, 1].tolist(),
+                          foods[foods['식품군']==f].iloc[:, 2].tolist()])
     res_list = []
 
     for i in range(len(weights)):
